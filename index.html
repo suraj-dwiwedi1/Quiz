@@ -1238,41 +1238,232 @@ function downloadAnswerSheet() {
     const studentName =
         document.getElementById("studentName").value.trim();
 
-    const doc = new jsPDF();
+    const doc = new jsPDF("p", "mm", "a4");
 
-    let y = 20;
+    // =========================
+    // COLORS
+    // =========================
+    const gold = [190, 165, 125];
+    const lightGold = [210, 190, 155];
+    const darkText = [55, 55, 55];
 
-    // Title
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(18);
+    const pageWidth = 210;
 
-    doc.text(
-        studentSubject + " - Answer Sheet",
-        105,
-        y,
-        { align: "center" }
-    );
+    const left = 12;
+    const col1 = 27;
+    const col2 = 82;
+    const col3 = 125;
+    const col4 = 198;
 
-    y += 12;
+    // =========================
+    // FIX SPECIAL CHARACTERS
+    // =========================
+    function cleanText(text) {
 
-    // Student information
-    doc.setFontSize(11);
-    doc.setFont("helvetica", "normal");
+        if (text === null || text === undefined) {
+            return "";
+        }
 
-    doc.text("Student Name: " + studentName, 15, y);
-    y += 7;
+        return String(text)
+            .replace(/−/g, "-")   // Unicode minus → normal minus
+            .replace(/–/g, "-")   // en dash
+            .replace(/—/g, "-");  // em dash
+    }
 
-    doc.text("Class: " + studentClass, 15, y);
-    y += 7;
+    // =========================
+    // DRAW CHECK / CROSS
+    // =========================
+    function drawStatusIcon(x, y, type) {
 
-    doc.text("Subject: " + studentSubject, 15, y);
-    y += 12;
+        doc.setLineWidth(0.8);
 
-    // Line
-    doc.line(15, y, 195, y);
-    y += 10;
+        if (type === "correct") {
 
-    // Questions
+            // ✓
+            doc.setDrawColor(25, 150, 80);
+
+            doc.line(x, y + 1, x + 1.5, y + 3);
+            doc.line(x + 1.5, y + 3, x + 5, y - 2);
+
+        } else if (type === "wrong") {
+
+            // ✕
+            doc.setDrawColor(200, 45, 45);
+
+            doc.line(x, y - 2, x + 4, y + 3);
+            doc.line(x + 4, y - 2, x, y + 3);
+
+        } else {
+
+            // ○ Not attempted
+            doc.setDrawColor(130, 130, 130);
+
+            doc.circle(x + 2, y, 2, "S");
+        }
+    }
+
+    // =========================
+    // HEADER
+    // =========================
+    function drawHeader() {
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(30);
+        doc.setTextColor(...gold);
+
+        doc.text(
+            "ANSWERSHEET",
+            left,
+            30
+        );
+
+        // Student information
+        const infoX = 125;
+
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(11);
+        doc.setTextColor(...gold);
+
+        doc.text("NAME:", infoX, 16);
+        doc.line(infoX + 18, 16, 198, 16);
+
+        doc.text("CLASS:", infoX, 27);
+        doc.line(infoX + 18, 27, 198, 27);
+
+        doc.text("SUBJECT:", infoX, 38);
+        doc.line(infoX + 22, 38, 198, 38);
+
+        // Values
+        doc.setFontSize(9);
+        doc.setTextColor(...darkText);
+
+        doc.text(
+            cleanText(studentName),
+            infoX + 20,
+            14
+        );
+
+        doc.text(
+            cleanText(studentClass),
+            infoX + 20,
+            25
+        );
+
+        doc.text(
+            cleanText(studentSubject),
+            infoX + 24,
+            36
+        );
+    }
+
+    // =========================
+    // TABLE HEADER
+    // =========================
+    function drawTableHeader(y) {
+
+        const height = 14;
+
+        doc.setFillColor(...gold);
+        doc.setDrawColor(120, 100, 75);
+        doc.setLineWidth(0.3);
+
+        doc.rect(
+            left,
+            y,
+            col1 - left,
+            height,
+            "FD"
+        );
+
+        doc.rect(
+            col1,
+            y,
+            col2 - col1,
+            height,
+            "FD"
+        );
+
+        doc.rect(
+            col2,
+            y,
+            col3 - col2,
+            height,
+            "FD"
+        );
+
+        doc.rect(
+            col3,
+            y,
+            col4 - col3,
+            height,
+            "FD"
+        );
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(8);
+        doc.setTextColor(255, 255, 255);
+
+        doc.text(
+            "S NO.",
+            (left + col1) / 2,
+            y + 9,
+            { align: "center" }
+        );
+
+        doc.text(
+            "QUESTION",
+            (col1 + col2) / 2,
+            y + 9,
+            { align: "center" }
+        );
+
+        doc.text(
+            "YOUR ANSWER",
+            (col2 + col3) / 2,
+            y + 9,
+            { align: "center" }
+        );
+
+        doc.text(
+            "CORRECT ANSWER",
+            (col3 + col4) / 2,
+            y + 9,
+            { align: "center" }
+        );
+
+        return y + height;
+    }
+
+    // =========================
+    // TEXT WRAPPING
+    // =========================
+    function wrapText(text, width) {
+
+        return doc.splitTextToSize(
+            cleanText(text),
+            width
+        );
+    }
+
+    // =========================
+    // PAGE HEADER
+    // =========================
+    function drawPageHeader() {
+
+        drawHeader();
+
+        return drawTableHeader(50);
+    }
+
+    let y = drawPageHeader();
+
+    const questionWidth = col2 - col1 - 4;
+    const answerWidth = col3 - col2 - 9;
+    const correctWidth = col4 - col3 - 4;
+
+    // =========================
+    // QUESTIONS
+    // =========================
     activeQuestions.forEach((question, index) => {
 
         const selected = selectedAnswers[index];
@@ -1283,62 +1474,204 @@ function downloadAnswerSheet() {
                 : question.options[selected];
 
         const correctAnswer =
-            question.options[question.answer];
+            question.answer === null
+                ? "Answer not available"
+                : question.options[question.answer];
 
-        // Question
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(10);
+        // Determine status
+        let status;
 
-        const questionText =
-            "Q" + (index + 1) + ". " + question.question;
+        if (selected === null) {
 
-        const questionLines =
-            doc.splitTextToSize(questionText, 175);
+            status = "notAttempted";
 
-        // Check page space
-        if (y + questionLines.length * 5 + 25 > 285) {
-            doc.addPage();
-            y = 20;
+        } else if (
+            question.answer !== null &&
+            selected === question.answer
+        ) {
+
+            status = "correct";
+
+        } else {
+
+            status = "wrong";
         }
 
-        doc.text(questionLines, 15, y);
+        // Wrap text
+        const questionLines =
+            wrapText(
+                `${index + 1}. ${question.question}`,
+                questionWidth
+            );
 
-        y += questionLines.length * 5 + 5;
-
-        // Your answer
-        doc.setFont("helvetica", "normal");
-
-        const yourText =
-            "Your Answer: " + yourAnswer;
-
-        const yourLines =
-            doc.splitTextToSize(yourText, 175);
-
-        doc.text(yourLines, 20, y);
-
-        y += yourLines.length * 5 + 4;
-
-        // Correct answer
-        const correctText =
-            "Correct Answer: " + correctAnswer;
+        const answerLines =
+            wrapText(
+                yourAnswer,
+                answerWidth
+            );
 
         const correctLines =
-            doc.splitTextToSize(correctText, 175);
+            wrapText(
+                correctAnswer,
+                correctWidth
+            );
 
-        doc.text(correctLines, 20, y);
+        const maxLines = Math.max(
+            questionLines.length,
+            answerLines.length,
+            correctLines.length,
+            1
+        );
 
-        y += correctLines.length * 5 + 8;
+        const rowHeight =
+            Math.max(10, maxLines * 4.5 + 3);
+
+        // New page
+        if (y + rowHeight > 280) {
+
+            doc.addPage();
+
+            y = drawPageHeader();
+        }
+
+        // =========================
+        // CELLS
+        // =========================
+
+        doc.setFillColor(255, 255, 255);
+        doc.setDrawColor(...lightGold);
+        doc.setLineWidth(0.25);
+
+        doc.rect(
+            left,
+            y,
+            col1 - left,
+            rowHeight,
+            "FD"
+        );
+
+        doc.rect(
+            col1,
+            y,
+            col2 - col1,
+            rowHeight,
+            "FD"
+        );
+
+        doc.rect(
+            col2,
+            y,
+            col3 - col2,
+            rowHeight,
+            "FD"
+        );
+
+        doc.rect(
+            col3,
+            y,
+            col4 - col3,
+            rowHeight,
+            "FD"
+        );
+
+        // =========================
+        // QUESTION NUMBER
+        // =========================
+
+        doc.setTextColor(...gold);
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(8);
+
+        doc.text(
+            String(index + 1),
+            (left + col1) / 2,
+            y + rowHeight / 2 + 2,
+            { align: "center" }
+        );
+
+        // =========================
+        // QUESTION
+        // =========================
+
+        doc.setTextColor(...darkText);
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(7.5);
+
+        doc.text(
+            questionLines,
+            col1 + 2,
+            y + 5
+        );
+
+        // =========================
+        // YOUR ANSWER + ICON
+        // =========================
+
+        const iconY =
+            y + rowHeight / 2;
+
+        drawStatusIcon(
+            col2 + 2,
+            iconY,
+            status
+        );
+
+        doc.setTextColor(...darkText);
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(7.5);
+
+        doc.text(
+            answerLines,
+            col2 + 9,
+            y + 5
+        );
+
+        // =========================
+        // CORRECT ANSWER
+        // =========================
+
+        // Always show ✓ before correct answer
+        drawStatusIcon(
+            col3 + 2,
+            iconY,
+            "correct"
+        );
+
+        doc.setTextColor(...darkText);
+
+        doc.text(
+            correctLines,
+            col3 + 9,
+            y + 5
+        );
+
+        y += rowHeight;
     });
 
-    // Save PDF
-    const safeName = studentName
-        ? studentName.replace(/\s+/g, "_")
-        : "Student";
+    // =========================
+    // SAVE PDF
+    // =========================
 
-    const fileName =
-        safeName + "_Answer_Sheet.pdf";
+    const safeName =
+        studentName
+            ? studentName
+                .replace(/[^\w\s-]/g, "")
+                .replace(/\s+/g, "_")
+            : "Student";
 
-    doc.save(fileName);
+    const safeSubject =
+        studentSubject
+            ? studentSubject
+                .replace(/[^\w\s-]/g, "")
+                .replace(/\s+/g, "_")
+            : "Quiz";
+
+    doc.save(
+        safeName +
+        "_" +
+        safeSubject +
+        "_AnswerSheet.pdf"
+    );
 }
 
 // Prevent Back button from exiting during the test
