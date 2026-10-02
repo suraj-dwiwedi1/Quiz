@@ -871,7 +871,6 @@ function endTest() {
 }
 
 function showAnswerReview() {
-
     const reviewContainer =
         document.getElementById("answerReview");
 
@@ -880,21 +879,23 @@ function showAnswerReview() {
     activeQuestions.forEach((question, index) => {
 
         const div = document.createElement("div");
-
         div.className = "review-question";
 
         const selectedAnswer = selectedAnswers[index];
 
         let userAnswer = "Not Attempted";
+        let answerStatus = "❌";
 
         if (selectedAnswer !== null) {
             userAnswer = question.options[selectedAnswer];
+
+            if (selectedAnswer === question.answer) {
+                answerStatus = "✅";
+            }
         }
 
         const correctAnswer =
-            question.answer === null
-                ? "Answer not available"
-                : question.options[question.answer];
+            question.options[question.answer];
 
         div.innerHTML = `
             <p>
@@ -903,19 +904,18 @@ function showAnswerReview() {
             </p>
 
             <p>
-                Your Answer:
-                <span>${userAnswer}</span>
+                ${answerStatus} Your Answer: ${userAnswer}
             </p>
 
             <p>
-                Correct Answer:
-                <span>${correctAnswer}</span>
+                ✅ Correct Answer: ${correctAnswer}
             </p>
         `;
 
         reviewContainer.appendChild(div);
     });
 }
+
 function toggleAnswers() {
 
     const answerReview = document.getElementById("answerReview");
