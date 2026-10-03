@@ -17,333 +17,332 @@ const class5MathsQuestions = [
 
 
 const class5MathsQuestions = [
-
-    {
-        question: "What is the place value of 7 in 47,325?",
+     {
+        question: "How many degrees are there in a straight angle?",
         options: [
-            "7",
-            "70",
-            "700",
-            "7,000"
-        ],
-        answer: 3
-    },
-
-    {
-        question: "Which is the smallest 5-digit number?",
-        options: [
-            "9,999",
-            "10,000",
-            "10,001",
-            "11,000"
+            "90°",
+            "180°",
+            "270°",
+            "360°"
         ],
         answer: 1
     },
 
     {
-        question: "What is 3,456 + 2,789?",
+        question: "An acute angle measures:",
         options: [
-            "6,145",
-            "6,245",
-            "6,255",
-            "6,345"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "What is 8,000 − 3,475?",
-        options: [
-            "4,425",
-            "4,525",
-            "4,625",
-            "5,525"
-        ],
-        answer: 1
-    },
-
-    {
-        question: "What is 125 × 8?",
-        options: [
-            "900",
-            "1,000",
-            "1,025",
-            "1,100"
-        ],
-        answer: 1
-    },
-
-    {
-        question: "What is 936 ÷ 9?",
-        options: [
-            "94",
-            "102",
-            "104",
-            "114"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "Which number is divisible by 5?",
-        options: [
-            "234",
-            "347",
-            "450",
-            "672"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "What is the greatest 4-digit number?",
-        options: [
-            "9,000",
-            "9,090",
-            "9,999",
-            "10,000"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "Which fraction is equal to 1/2?",
-        options: [
-            "2/3",
-            "2/4",
-            "3/4",
-            "1/4"
-        ],
-        answer: 1
-    },
-
-    {
-        question: "Which is the largest fraction?",
-        options: [
-            "1/5",
-            "2/5",
-            "4/5",
-            "3/5"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "What is 2/7 + 3/7?",
-        options: [
-            "5/7",
-            "5/14",
-            "6/7",
-            "1/7"
+            "Less than 90°",
+            "Exactly 90°",
+            "More than 90°",
+            "Exactly 180°"
         ],
         answer: 0
     },
 
     {
-        question: "What is 7/8 − 3/8?",
+        question: "An obtuse angle is more than 90° but less than:",
         options: [
-            "3/8",
-            "4/8",
-            "5/8",
-            "10/8"
+            "120°",
+            "180°",
+            "270°",
+            "360°"
         ],
         answer: 1
     },
 
     {
-        question: "Which decimal represents 5/10?",
+        question: "A reflex angle is more than 180° but less than:",
         options: [
-            "0.05",
-            "0.5",
-            "5.0",
-            "0.15"
+            "270°",
+            "300°",
+            "360°",
+            "450°"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "Which instrument is used to measure an angle?",
+        options: [
+            "Ruler",
+            "Compass",
+            "Protractor",
+            "Divider"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "In an angle ABC, which letter represents the vertex?",
+        options: [
+            "A",
+            "B",
+            "C",
+            "ABC"
         ],
         answer: 1
     },
 
     {
-        question: "What is 3.5 + 2.4?",
+        question: "Two rays with a common endpoint form a:",
         options: [
-            "5.7",
-            "5.8",
-            "5.9",
-            "6.0"
+            "Line",
+            "Line segment",
+            "Angle",
+            "Circle"
         ],
         answer: 2
     },
 
     {
-        question: "What is 8.6 − 3.2?",
+        question: "The common endpoint of the two arms of an angle is called the:",
         options: [
-            "5.2",
-            "5.4",
-            "5.6",
-            "6.4"
+            "Side",
+            "Vertex",
+            "Centre",
+            "Radius"
         ],
         answer: 1
     },
 
     {
-        question: "How many centimetres are there in 1 metre?",
+        question: "A line segment has:",
         options: [
-            "10",
-            "50",
-            "100",
-            "1,000"
+            "No endpoint",
+            "One endpoint",
+            "Two endpoints",
+            "Three endpoints"
         ],
         answer: 2
     },
 
     {
-        question: "How many grams are there in 1 kilogram?",
+        question: "A ray has:",
         options: [
-            "100",
-            "500",
-            "1,000",
-            "10,000"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "How many minutes are there in 2 hours?",
-        options: [
-            "60",
-            "90",
-            "120",
-            "180"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "A pencil costs ₹8. How much will 6 pencils cost?",
-        options: [
-            "₹42",
-            "₹48",
-            "₹54",
-            "₹56"
+            "No endpoint",
+            "One endpoint",
+            "Two endpoints",
+            "Four endpoints"
         ],
         answer: 1
     },
 
     {
-        question: "Riya has ₹100 and spends ₹65. How much money is left?",
+        question: "A line can be extended:",
         options: [
-            "₹25",
-            "₹30",
-            "₹35",
-            "₹45"
+            "Only in one direction",
+            "Only to the left",
+            "In both directions",
+            "Not at all"
         ],
         answer: 2
     },
 
     {
-        question: "How many sides does a hexagon have?",
+        question: "Which pair of lines never meet?",
         options: [
-            "5",
-            "6",
-            "7",
-            "8"
+            "Intersecting lines",
+            "Parallel lines",
+            "Perpendicular lines",
+            "Curved lines"
         ],
         answer: 1
     },
 
     {
-        question: "An angle smaller than 90° is called a:",
+        question: "Two lines meeting at a point are called:",
         options: [
-            "Right angle",
-            "Obtuse angle",
-            "Acute angle",
-            "Straight angle"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "How many lines of symmetry does a square have?",
-        options: [
-            "2",
-            "3",
-            "4",
-            "5"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "What is the perimeter of a square with side 6 cm?",
-        options: [
-            "12 cm",
-            "18 cm",
-            "24 cm",
-            "36 cm"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "What is the area of a rectangle with length 8 cm and breadth 4 cm?",
-        options: [
-            "12 cm²",
-            "24 cm²",
-            "32 cm²",
-            "36 cm²"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "What comes next? 5, 10, 15, 20, ___",
-        options: [
-            "22",
-            "24",
-            "25",
-            "30"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "Which is an even number?",
-        options: [
-            "135",
-            "247",
-            "368",
-            "451"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "What is the average of 10, 20 and 30?",
-        options: [
-            "15",
-            "20",
-            "25",
-            "30"
+            "Parallel lines",
+            "Intersecting lines",
+            "Equal lines",
+            "Curved lines"
         ],
         answer: 1
     },
 
     {
-        question: "A class has 24 students. They are divided equally into 4 groups. How many students are in each group?",
+        question: "Two lines that meet at an angle of 90° are called:",
         options: [
-            "4",
-            "5",
-            "6",
-            "8"
+            "Parallel lines",
+            "Slanting lines",
+            "Perpendicular lines",
+            "Curved lines"
         ],
         answer: 2
     },
 
     {
-        question: "A bus starts at 8:30 AM and reaches its destination at 10:00 AM. How long is the journey?",
+        question: "The sum of the angles of a triangle is:",
         options: [
-            "1 hour",
-            "1 hour 15 minutes",
-            "1 hour 30 minutes",
-            "2 hours"
+            "90°",
+            "180°",
+            "270°",
+            "360°"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "A triangle with all three sides unequal is called a:",
+        options: [
+            "Equilateral triangle",
+            "Isosceles triangle",
+            "Scalene triangle",
+            "Right triangle"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "A triangle with all three sides equal is called a:",
+        options: [
+            "Scalene triangle",
+            "Isosceles triangle",
+            "Equilateral triangle",
+            "Right triangle"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "An isosceles triangle has:",
+        options: [
+            "No equal sides",
+            "Two equal sides",
+            "Three unequal sides",
+            "Four equal sides"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "An acute triangle has all its angles:",
+        options: [
+            "Less than 90°",
+            "Equal to 90°",
+            "More than 90°",
+            "Equal to 180°"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "An obtuse triangle has one angle:",
+        options: [
+            "Less than 90°",
+            "Equal to 90°",
+            "More than 90°",
+            "Equal to 180°"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "A right triangle has one angle equal to:",
+        options: [
+            "45°",
+            "60°",
+            "90°",
+            "180°"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "An equilateral triangle is also a:",
+        options: [
+            "Right triangle",
+            "Obtuse triangle",
+            "Acute triangle",
+            "Scalene triangle"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "Two angles of a triangle are 45° and 75°. What is the third angle?",
+        options: [
+            "50°",
+            "60°",
+            "70°",
+            "80°"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "Can a triangle be formed using sides of 6 cm, 9 cm and 16 cm?",
+        options: [
+            "Yes",
+            "No",
+            "Only if two sides are equal",
+            "Only if all sides are equal"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "Can a triangle be formed using sides of 8 cm, 5 cm and 9 cm?",
+        options: [
+            "Yes",
+            "No",
+            "Only with a right angle",
+            "Only with an obtuse angle"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "Can a triangle be formed using angles 30°, 120° and 40°?",
+        options: [
+            "Yes",
+            "No",
+            "Only if all angles are equal",
+            "Only if one angle is 90°"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "Can a triangle be formed using angles 45°, 70° and 65°?",
+        options: [
+            "Yes",
+            "No",
+            "Only if two angles are equal",
+            "Only if one angle is 90°"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What is the longest chord of a circle called?",
+        options: [
+            "Radius",
+            "Diameter",
+            "Arc",
+            "Circumference"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "A line segment passing through the centre of a circle and touching the circle at two points is called a:",
+        options: [
+            "Radius",
+            "Diameter",
+            "Chord",
+            "Arc"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "A line segment joining the centre of a circle to a point on its circumference is called a:",
+        options: [
+            "Diameter",
+            "Chord",
+            "Radius",
+            "Arc"
         ],
         answer: 2
     }
