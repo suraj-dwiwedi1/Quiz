@@ -1,278 +1,351 @@
+/* format used for question paper 
+
 const class5MathsQuestions = [
 
     {
-        question: "Which of the following numbers is a factor of every natural number?",
+        question: "Write your Mathematics question here",
         options: [
-            "0",
-            "1",
-            "2",
-            "10"
+            "use 0 for Option A",
+            "use 1 for Option B",
+            "use 2 for Option C",
+            "use 3 for Option D"
         ],
-        answer: 1
+        answer: 0
     },
+]; */
+
+
+
+const class5MathsQuestions = [
 
     {
-        question: "What is the smallest prime number?",
+        question: "What is the place value of 7 in 47,325?",
         options: [
-            "0",
-            "1",
-            "2",
-            "3"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "How many total factors does the number 24 have?",
-        options: [
-            "6",
             "7",
-            "8",
-            "10"
+            "70",
+            "700",
+            "7,000"
+        ],
+        answer: 3
+    },
+
+    {
+        question: "Which is the smallest 5-digit number?",
+        options: [
+            "9,999",
+            "10,000",
+            "10,001",
+            "11,000"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "What is 3,456 + 2,789?",
+        options: [
+            "6,145",
+            "6,245",
+            "6,255",
+            "6,345"
         ],
         answer: 2
     },
 
     {
-        question: "What is the 7th multiple of 9?",
+        question: "What is 8,000 − 3,475?",
         options: [
-            "54",
-            "63",
-            "72",
-            "81"
+            "4,425",
+            "4,525",
+            "4,625",
+            "5,525"
         ],
         answer: 1
     },
 
     {
-        question: "Which of the following numbers is divisible by 6?",
+        question: "What is 125 × 8?",
         options: [
-            "134",
-            "258",
-            "345",
-            "512"
+            "900",
+            "1,000",
+            "1,025",
+            "1,100"
         ],
         answer: 1
     },
 
     {
-        question: "Find the Highest Common Factor (HCF) of 18 and 24.",
+        question: "What is 936 ÷ 9?",
         options: [
-            "3",
-            "6",
-            "12",
-            "72"
-        ],
-        answer: 1
-    },
-
-    {
-        question: "What is the Least Common Multiple (LCM) of 4, 6, and 8?",
-        options: [
-            "12",
-            "16",
-            "24",
-            "48"
+            "94",
+            "102",
+            "104",
+            "114"
         ],
         answer: 2
     },
 
     {
-        question: "Which of the following pairs of numbers are co-prime (HCF = 1)?",
+        question: "Which number is divisible by 5?",
         options: [
-            "14 and 21",
-            "9 and 16",
-            "15 and 25",
-            "12 and 18"
+            "234",
+            "347",
+            "450",
+            "672"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "What is the greatest 4-digit number?",
+        options: [
+            "9,000",
+            "9,090",
+            "9,999",
+            "10,000"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "Which fraction is equal to 1/2?",
+        options: [
+            "2/3",
+            "2/4",
+            "3/4",
+            "1/4"
         ],
         answer: 1
     },
 
     {
-        question: "The product of two numbers is 180. If their HCF is 6, what is their LCM?",
+        question: "Which is the largest fraction?",
         options: [
-            "24",
-            "30",
+            "1/5",
+            "2/5",
+            "4/5",
+            "3/5"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "What is 2/7 + 3/7?",
+        options: [
+            "5/7",
+            "5/14",
+            "6/7",
+            "1/7"
+        ],
+        answer: 0
+    },
+
+    {
+        question: "What is 7/8 − 3/8?",
+        options: [
+            "3/8",
+            "4/8",
+            "5/8",
+            "10/8"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "Which decimal represents 5/10?",
+        options: [
+            "0.05",
+            "0.5",
+            "5.0",
+            "0.15"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "What is 3.5 + 2.4?",
+        options: [
+            "5.7",
+            "5.8",
+            "5.9",
+            "6.0"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "What is 8.6 − 3.2?",
+        options: [
+            "5.2",
+            "5.4",
+            "5.6",
+            "6.4"
+        ],
+        answer: 1
+    },
+
+    {
+        question: "How many centimetres are there in 1 metre?",
+        options: [
+            "10",
+            "50",
+            "100",
+            "1,000"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "How many grams are there in 1 kilogram?",
+        options: [
+            "100",
+            "500",
+            "1,000",
+            "10,000"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "How many minutes are there in 2 hours?",
+        options: [
             "60",
-            "1080"
+            "90",
+            "120",
+            "180"
         ],
         answer: 2
     },
 
     {
-        question: "What is the sum of all the factors of 12?",
+        question: "A pencil costs ₹8. How much will 6 pencils cost?",
         options: [
-            "16",
-            "24",
-            "28",
-            "30"
+            "₹42",
+            "₹48",
+            "₹54",
+            "₹56"
         ],
         answer: 1
     },
 
     {
-        question: "Which of the following is a composite number?",
+        question: "Riya has ₹100 and spends ₹65. How much money is left?",
         options: [
-            "31",
-            "47",
-            "51",
-            "59"
+            "₹25",
+            "₹30",
+            "₹35",
+            "₹45"
         ],
         answer: 2
     },
 
     {
-        question: "Three bells toll together at intervals of 9, 12, and 15 minutes respectively. After how many minutes will they toll together next?",
+        question: "How many sides does a hexagon have?",
         options: [
-            "60 minutes",
-            "120 minutes",
-            "180 minutes",
-            "36 minutes"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "An angle whose measure is greater than 90° and less than 180° is called:",
-        options: [
-            "Acute angle",
-            "Right angle",
-            "Obtuse angle",
-            "Reflex angle"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "What angle is formed by the hour hand and minute hand of a clock at 3 o'clock?",
-        options: [
-            "45°",
-            "60°",
-            "90°",
-            "180°"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "What is the angle formed by two straight opposite rays (a straight line)?",
-        options: [
-            "90°",
-            "180°",
-            "270°",
-            "360°"
-        ],
-        answer: 1
-    },
-
-    {
-        question: "What is the sum of the three interior angles of any triangle?",
-        options: [
-            "90°",
-            "180°",
-            "270°",
-            "360°"
-        ],
-        answer: 1
-    },
-
-    {
-        question: "Two angles are complementary if their sum equals:",
-        options: [
-            "45°",
-            "90°",
-            "180°",
-            "360°"
-        ],
-        answer: 1
-    },
-
-    {
-        question: "If an angle measures 65°, what is the measure of its supplement?",
-        options: [
-            "25°",
-            "115°",
-            "125°",
-            "295°"
-        ],
-        answer: 1
-    },
-
-    {
-        question: "A triangle in which all three sides are of equal length is called:",
-        options: [
-            "Scalene triangle",
-            "Isosceles triangle",
-            "Equilateral triangle",
-            "Right-angled triangle"
-        ],
-        answer: 2
-    },
-
-    {
-        question: "How many line segments are required to form a closed polygon called a pentagon?",
-        options: [
-            "4",
             "5",
             "6",
+            "7",
             "8"
         ],
         answer: 1
     },
 
     {
-        question: "A line segment that connects the center of a circle to any point on its boundary is called the:",
+        question: "An angle smaller than 90° is called a:",
         options: [
-            "Diameter",
-            "Chord",
-            "Radius",
-            "Circumference"
+            "Right angle",
+            "Obtuse angle",
+            "Acute angle",
+            "Straight angle"
         ],
         answer: 2
     },
 
     {
-        question: "If the diameter of a circle is 16 cm, what is its radius?",
+        question: "How many lines of symmetry does a square have?",
         options: [
-            "4 cm",
-            "8 cm",
-            "32 cm",
-            "24 cm"
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "What is the perimeter of a square with side 6 cm?",
+        options: [
+            "12 cm",
+            "18 cm",
+            "24 cm",
+            "36 cm"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "What is the area of a rectangle with length 8 cm and breadth 4 cm?",
+        options: [
+            "12 cm²",
+            "24 cm²",
+            "32 cm²",
+            "36 cm²"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "What comes next? 5, 10, 15, 20, ___",
+        options: [
+            "22",
+            "24",
+            "25",
+            "30"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "Which is an even number?",
+        options: [
+            "135",
+            "247",
+            "368",
+            "451"
+        ],
+        answer: 2
+    },
+
+    {
+        question: "What is the average of 10, 20 and 30?",
+        options: [
+            "15",
+            "20",
+            "25",
+            "30"
         ],
         answer: 1
     },
 
     {
-        question: "What is the perimeter of a regular hexagon with each side measuring 7 cm?",
+        question: "A class has 24 students. They are divided equally into 4 groups. How many students are in each group?",
         options: [
-            "35 cm",
-            "42 cm",
-            "49 cm",
-            "56 cm"
+            "4",
+            "5",
+            "6",
+            "8"
         ],
-        answer: 1
+        answer: 2
     },
 
     {
-        question: "The perimeter of a square park is 64 meters. What is the area of this park?",
+        question: "A bus starts at 8:30 AM and reaches its destination at 10:00 AM. How long is the journey?",
         options: [
-            "128 sq m",
-            "256 sq m",
-            "512 sq m",
-            "64 sq m"
+            "1 hour",
+            "1 hour 15 minutes",
+            "1 hour 30 minutes",
+            "2 hours"
         ],
-        answer: 1
-    },
-
-    {
-        question: "A rectangle has a length of 15 cm and a breadth of 8 cm. What is its perimeter?",
-        options: [
-            "23 cm",
-            "46 cm",
-            "60 cm",
-            "120 cm"
-        ],
-        answer: 1
+        answer: 2
     }
 
 ];
